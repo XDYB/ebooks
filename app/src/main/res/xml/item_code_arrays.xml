@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map linked="true">
+    <entry key="1">
+        {
+        "chapter":"Chapter2",
+        "name":"Item1",
+        "content": [
+        "Provider.java",
+        "Service.java",
+        "Services.java",
+        "Test.java"
+        ]
+        }
+    </entry>
+
+    <entry key="2">
+        {
+        "chapter":"Chapter2",
+        "name": "Item2",
+        "content": [
+        "builder/NutritionFacts.java",
+        "JavaBeans/NutritionFacts.java",
+        "telescoping constructor/NutritionFacts.java"
+        ]
+        }
+    </entry>
+
+    <entry key="3">
+        {
+        "chapter":"Chapter2",
+        "name": "Item3",
+        "content": [
+        "enum/Elvis.java",
+        "field/Elvis.java",
+        "method/Elvis.java"
+        "serializable/Elvis.java"
+        ]
+        }
+    </entry>
+
+    <entry key="4">
+        {
+        "chapter":"Chapter2",
+        "name": "Item4",
+        "content": [
+        "UtilityClass.java"
+        ]
+        }
+    </entry>
+
+    <entry key="5">
+        {
+        "chapter":"Chapter2",
+        "name": "Item5",
+        "content": [
+        "fast version/Person.java",
+        "slow version/Person.java",
+        "Sum.java"
+        ]
+        }
+    </entry>
+
+    <entry key="6">
+        {
+        "chapter":"Chapter2",
+        "name": "Item6",
+        "content": [
+        "EmptyStackException.java",
+        "Stack.java"
+        ]
+        }
+    </entry>
+
+    <entry key="8">
+        {
+        "chapter":"Chapter3",
+        "name": "Item8",
+        "content": [
+        "CaseInsensitiveString.java",
+        "Color.java",
+        "ColorPoint.java",
+        "composition/Color.java",
+        "composition/ColorPoint.java",
+        "composition/Point.java",
+        "CounterPoint.java",
+        "CounterPointTest.java",
+        "Point.java"
+        ]
+        }
+    </entry>
+
+    <entry key="9">
+        {
+        "chapter":"Chapter3",
+        "name": "Item9",
+        "content": [
+        "PhoneNumber.java"
+        ]
+        }
+    </entry>
+
+    <entry key="10">
+        {
+        "chapter":"Chapter3",
+        "name": "Item10",
+        "content": [
+        "PhoneNumber.java"
+        ]
+        }
+    </entry>
+
+    <entry key="11">
+        {
+        "chapter":"Chapter3",
+        "name": "Item11",
+        "content": [
+        "EmptyStackException.java",
+        "PhoneNumber.java",
+        "Stack.java"
+        ]
+        }
+    </entry>
+
+    <entry key="12">
+        {
+        "chapter":"Chapter3",
+        "name": "Item12",
+        "content": [
+        "PhoneNumber.java",
+        "WordList.java"
+        ]
+        }
+    </entry>
+
+    <entry key="14">
+        {
+        "chapter":"Chapter4",
+        "name": "Item14",
+        "content": [
+        "Point.java",
+        "Time.java"
+        ]
+        }
+    </entry>
+
+    <entry key="15">
+        {
+        "chapter":"Chapter4",
+        "name": "Item15",
+        "content": [
+        "Complex.java"
+        ]
+        }
+    </entry>
+
+    <entry key="16">
+        {
+        "chapter":"Chapter4",
+        "name": "Item16",
+        "content": [
+        "ForwardingSet.java",
+        "InstrumentedHashSet.java",
+        "InstrumentedSet.java"
+        ]
+        }
+    </entry>
+
+    <entry key="17">
+        {
+        "chapter":"Chapter4",
+        "name": "Item17",
+        "content": [
+        "Sub.java",
+        "Super.java"
+        ]
+        }
+    </entry>
+
+    <entry key="18">
+        {
+        "chapter":"Chapter4",
+        "name": "Item18",
+        "content": [
+        "AbstractMapEntry.java",
+        "IntArrays.java"
+        ]
+        }
+    </entry>
+
+    <entry key="19">
+        {
+        "chapter":"Chapter4",
+        "name": "Item19",
+        "content": [
+        "PhysicalConstants.java"
+        ]
+        }
+    </entry>
+
+    <entry key="20">
+        {
+        "chapter":"Chapter4",
+        "name": "Item20",
+        "content": [
+        "hierarchy/Circle.java",
+        "hierarchy/Figure.java",
+        "hierarchy/Rectangle.java",
+        "hierarchy/Square.java",
+        "tagged class/Figure.java"
+        ]
+        }
+    </entry>
+
+    <entry key="23">
+        {
+        "chapter":"Chapter5",
+        "name": "Item23",
+        "content": [
+        "Raw.java"
+        ]
+        }
+    </entry>
+
+    <entry key="25">
+        {
+        "chapter":"Chapter5",
+        "name": "Item25",
+        "content": [
+        "Function.java",
+        "Reduction.java"
+        ]
+        }
+    </entry>
+
+    <entry key="26">
+        {
+        "chapter":"Chapter5",
+        "name": "Item26",
+        "content": [
+        "first technqiue/EmptyStackException.java",
+        "first technqiue/Stack.java",
+        "second technqiue/EmptyStackException.java",
+        "second technqiue/Stack.java"
+        ]
+        }
+    </entry>
+
+    <entry key="27">
+        {
+        "chapter":"Chapter5",
+        "name": "Item27",
+        "content": [
+        "GenericSingletonFactory.java",
+        "GenericStaticFactory.java",
+        "RecursiveTypeBound.java",
+        "UnaryFunction.java",
+        "Union.java"
+        ]
+        }
+    </entry>
+
+    <entry key="28">
+        {
+        "chapter":"Chapter5",
+        "name": "Item28",
+        "content": [
+        "EmptyStackException.java",
+        "Function.java",
+        "RecursiveTypeBound.java",
+        "Reduction.java",
+        "Stack.java",
+        "Swap.java",
+        "Union.java"
+        ]
+        }
+    </entry>
+
+    <entry key="29">
+        {
+        "chapter":"Chapter5",
+        "name": "Item29",
+        "content": [
+        "Favorites.java",
+        "PrintAnnotation.java"
+        ]
+        }
+    </entry>
+
+    <entry key="30">
+        {
+        "chapter":"Chapter6",
+        "name": "Item30",
+        "content": [
+        "Operation.java",
+        "PayrollDay.java",
+        "Planet.java",
+        "WeightTable.java"
+        ]
+        }
+    </entry>
+
+    <entry key="31">
+        {
+        "chapter":"Chapter6",
+        "name": "Item31",
+        "content": [
+        "Ensemble.java"
+        ]
+        }
+    </entry>
+
+    <entry key="32">
+        {
+        "chapter":"Chapter6",
+        "name": "Item32",
+        "content": [
+        "Text.java"
+        ]
+        }
+    </entry>
+
+    <entry key="33">
+        {
+        "chapter":"Chapter6",
+        "name": "Item33",
+        "content": [
+        "Herb.java",
+        "Phase.java"
+        ]
+        }
+    </entry>
+
+    <entry key="34">
+        {
+        "chapter":"Chapter6",
+        "name": "Item34",
+        "content": [
+        "BasicOperation.java",
+        "ExtendedOperation.java",
+        "Operation.java"
+        ]
+        }
+    </entry>
+
+    <entry key="35">
+        {
+        "chapter":"Chapter6",
+        "name": "Item35",
+        "content": [
+        "ExceptionTest.java",
+        "RunTests.java",
+        "Sample.java",
+        "Sample2.java",
+        "Test.java"
+        ]
+        }
+    </entry>
+
+    <entry key="36">
+        {
+        "chapter":"Chapter6",
+        "name": "Item36",
+        "content": [
+        "Bigram.java"
+        ]
+        }
+    </entry>
+
+    <entry key="39">
+        {
+        "chapter":"Chapter7",
+        "name": "Item36",
+        "content": [
+        "Attack.java",
+        "Period.java"
+        ]
+        }
+    </entry>
+
+    <entry key="41">
+        {
+        "chapter":"Chapter7",
+        "name": "Item41",
+        "content": [
+        "CollectionClassifier.java",
+        "Overriding.java",
+        "SetList.java"
+        ]
+        }
+    </entry>
+
+
+    <entry key="42">
+        {
+        "chapter":"Chapter7",
+        "name": "Item42",
+        "content": [
+        "Varargs.java"
+        ]
+        }
+    </entry>
+
+    <entry key="46">
+        {
+        "chapter":"Chapter8",
+        "name": "Item46",
+        "content": [
+        "DiceRolls.java",
+        "NestedIteration.java"
+        ]
+        }
+    </entry>
+
+    <entry key="47">
+        {
+        "chapter":"Chapter8",
+        "name": "Item47",
+        "content": [
+        "RandomBug.java"
+        ]
+        }
+    </entry>
+
+    <entry key="48">
+        {
+        "chapter":"Chapter8",
+        "name": "Item48",
+        "content": [
+        "Arithmetic.java"
+        ]
+        }
+    </entry>
+
+    <entry key="49">
+        {
+        "chapter":"Chapter8",
+        "name": "Item49",
+        "content": [
+        "BrokenComparator.java",
+        "Unbelievable.java"
+        ]
+        }
+    </entry>
+
+    <entry key="53">
+        {
+        "chapter":"Chapter8",
+        "name": "Item53",
+        "content": [
+        "MakeSet.java"
+        ]
+        }
+    </entry>
+
+    <entry key="66">
+        {
+        "chapter":"Chapter10",
+        "name": "Item66",
+        "content": [
+        "broken StopThread/StopThread.java",
+        "fixed StopThread 1/StopThread.java",
+        "fixed StopThread 2/StopThread.java"
+        ]
+        }
+    </entry>
+
+    <entry key="67">
+        {
+        "chapter":"Chapter10",
+        "name": "Item67",
+        "content": [
+        "ForwardingSet.java",
+        "ObservableSet.java",
+        "SetObserver.java",
+        "Test1.java",
+        "Test2.java",
+        "Test3.java"
+        ]
+        }
+    </entry>
+
+    <entry key="69">
+        {
+        "chapter":"Chapter10",
+        "name": "Item69",
+        "content": [
+        "ConcurrentTimer.java",
+        "Intern.java"
+        ]
+        }
+    </entry>
+
+    <entry key="71">
+        {
+        "chapter":"Chapter10",
+        "name": "Item71",
+        "content": [
+        "Initialization.java"
+        ]
+        }
+    </entry>
+
+    <entry key="72">
+        {
+        "chapter":"Chapter10",
+        "name": "Item72",
+        "content": [
+        "SlowCountDownLatch.java"
+        ]
+        }
+    </entry>
+
+    <entry key="74">
+        {
+        "chapter":"Chapter11",
+        "name": "Item74",
+        "content": [
+        "AbstractFoo.java",
+        "Foo.java"
+        ]
+        }
+    </entry>
+
+    <entry key="75">
+        {
+        "chapter":"Chapter11",
+        "name": "Item75",
+        "content": [
+        "StringList.java"
+        ]
+        }
+    </entry>
+
+    <entry key="76">
+        {
+        "chapter":"Chapter11",
+        "name": "Item76",
+        "content": [
+        "BogusPeriod.java",
+        "MutablePeriod.java",
+        "Period.java"
+        ]
+        }
+    </entry>
+
+
+    <entry key="77">
+        {
+        "chapter":"Chapter11",
+        "name": "Item77",
+        "content": [
+        "Elvis.java",
+        "ElvisImpersonator.java",
+        "ElvisStealer.java",
+        "enum singleton/Elvis.java",
+        ]
+        }
+    </entry>
+
+
+    <entry key="78">
+        {
+        "chapter":"Chapter11",
+        "name": "Item78",
+        "content": [
+        "BogusPeriod.java",
+        "MutablePeriod.java",
+        "Period.java"
+        ]
+        }
+    </entry>
+
+
+</map>

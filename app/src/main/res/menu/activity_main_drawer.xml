@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="目录">
+        <menu>
+
+            <item
+                android:id="@+id/chapter_1"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="1.引言" />
+
+            <item
+                android:id="@+id/chapter_2"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="2.创建和销毁对象" />
+
+            <item
+                android:id="@+id/chapter_3"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="3.对于所有对象都通用方法" />
+
+            <item
+                android:id="@+id/chapter_4"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="4.类和接口" />
+
+            <item
+                android:id="@+id/chapter_5"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="5.泛型" />
+
+            <item
+                android:id="@+id/chapter_6"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="6.枚举和注解" />
+
+            <item
+                android:id="@+id/chapter_7"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="7.方法" />
+
+            <item
+                android:id="@+id/chapter_8"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="8.通用程序设计" />
+
+
+            <item
+                android:id="@+id/chapter_9"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="9.异常" />
+
+
+            <item
+                android:id="@+id/chapter_10"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="10.并发" />
+
+
+            <item
+                android:id="@+id/chapter_11"
+                android:icon="@drawable/ic_menu_book_mark"
+                android:title="11.序列化" />
+
+        </menu>
+    </item>
+
+    <item android:title="关于APP">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="分享" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="联系" />
+        </menu>
+    </item>
+
+</menu>
