@@ -27,7 +27,6 @@ import java.io.IOException;
 public class UpdateTask extends AsyncTask<String, String, String> {
     private Context context;
     private boolean isUpdateOnRelease;
-    //public static final String updateUrl = "https://api.github.com/repos/geeeeeeeeek/WeChatLuckyMoney/releases/latest";
     public static final String updateUrl = "https://raw.githubusercontent.com/hpu-spring87/ebooks/master/update.json";
 
     public UpdateTask(Context context, boolean needUpdate) {
