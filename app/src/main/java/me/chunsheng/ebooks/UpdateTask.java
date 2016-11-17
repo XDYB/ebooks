@@ -1,10 +1,13 @@
 package me.chunsheng.ebooks;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -25,7 +28,7 @@ public class UpdateTask extends AsyncTask<String, String, String> {
     private Context context;
     private boolean isUpdateOnRelease;
     //public static final String updateUrl = "https://api.github.com/repos/geeeeeeeeek/WeChatLuckyMoney/releases/latest";
-    public static final String updateUrl = "https://api.github.com/repos/hpu-spring87/ebooks/releases/latest";
+    public static final String updateUrl = "https://raw.githubusercontent.com/hpu-spring87/ebooks/master/update.json";
 
     public UpdateTask(Context context, boolean needUpdate) {
         this.context = context;
@@ -61,26 +64,41 @@ public class UpdateTask extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         try {
+
+            Log.e("更新信息：", result);
+
             JSONObject release = new JSONObject(result);
 
             // Get current version
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-            String version = pInfo.versionName;
+            int versionCode = pInfo.versionCode;
+            int latestVersion = release.getInt("versionCode");
+            final String updateTitle = release.getString("updateTitle");
+            final String updateMsg = release.getString("updateMsg");
+            final String downLoadUrl = release.getString("downloadUrl");
 
-            String latestVersion = release.getString("tag_name");
-            boolean isPreRelease = release.getBoolean("prerelease");
-            if (!isPreRelease && version.compareToIgnoreCase(latestVersion) >= 0) {
-                // Your version is ahead of or same as the latest.
-                if (this.isUpdateOnRelease)
-                    Toast.makeText(context, "已经是最新版本啦", Toast.LENGTH_SHORT).show();
-            } else {
-                // Need update.
-                String downloadUrl = release.getJSONArray("assets").getJSONObject(0).getString("browser_download_url");
-                // Give up on the fucking DownloadManager. The downloaded apk got renamed and unable to install. Fuck.
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(downloadUrl));
-                browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(browserIntent);
-                Toast.makeText(context, "发现新版本" + latestVersion + "正在为您准备下载", Toast.LENGTH_LONG).show();
+            if (versionCode < latestVersion) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setMessage(updateMsg);
+                builder.setTitle(updateTitle);
+                builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Need update.
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(downLoadUrl));
+                        browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(browserIntent);
+                        Toast.makeText(context, "正在为您准备下载", Toast.LENGTH_LONG).show();
+                        dialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.create().show();
             }
         } catch (Exception e) {
             e.printStackTrace();
