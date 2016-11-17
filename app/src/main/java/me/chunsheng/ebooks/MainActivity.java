@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity
      * 检查版本更新
      */
     public void checkVersion() {
-        new UpdateTask(getApplicationContext(), true).update();
+        new UpdateTask(this, true).update();
     }
 
     @Override

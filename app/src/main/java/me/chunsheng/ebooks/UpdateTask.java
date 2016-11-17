@@ -1,5 +1,6 @@
 package me.chunsheng.ebooks;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -77,27 +78,33 @@ public class UpdateTask extends AsyncTask<String, String, String> {
             final String downLoadUrl = release.getString("downloadUrl");
 
             if (versionCode < latestVersion) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setMessage(updateMsg);
-                builder.setTitle(updateTitle);
-                builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+
+                ((Activity) context).runOnUiThread(new Runnable() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Need update.
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(downLoadUrl));
-                        browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        context.startActivity(browserIntent);
-                        Toast.makeText(context, "正在为您准备下载", Toast.LENGTH_LONG).show();
-                        dialog.dismiss();
+                    public void run() {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        builder.setMessage(updateMsg);
+                        builder.setTitle(updateTitle);
+                        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Need update.
+                                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(downLoadUrl));
+                                browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                context.startActivity(browserIntent);
+                                Toast.makeText(context, "正在为您准备下载", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.create().show();
                     }
                 });
-                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                builder.create().show();
             }
         } catch (Exception e) {
             e.printStackTrace();

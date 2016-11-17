@@ -1,6 +1,6 @@
 {
   "versionCode": 2,
   "updateTitle": "发现新版本",
-  "updateMsg": "1.修复部分机型兼容性问题 \n 2.代码增加在线运行功能",
+  "updateMsg": "1.修复部分机型兼容性问题 \n2.代码增加在线运行功能",
   "downloadUrl": "https://raw.githubusercontent.com/hpu-spring87/ebooks/master/apk/Effective_Java_v1.0.0.apk"
 }
