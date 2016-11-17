@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.res.AssetManager;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -23,7 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.joanzapata.pdfview.util.FileUtils;
+import com.google.gson.Gson;
 import com.pddstudio.highlightjs.HighlightJsView;
 import com.pddstudio.highlightjs.models.Language;
 import com.pddstudio.highlightjs.models.Theme;
@@ -34,18 +33,17 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 import me.chunsheng.ebooks.floder.IconTreeItemHolder;
+import me.chunsheng.ebooks.hackerearth.api.client.HackerEarthAPI;
+import me.chunsheng.ebooks.hackerearth.api.options.RunOptions;
+import me.chunsheng.ebooks.hackerearth.api.options.SupportedLanguages;
+import me.chunsheng.ebooks.hackerearth.api.responses.RunResponse;
 
 
 public class ScrollingActivity extends AppCompatActivity {
@@ -94,20 +92,21 @@ public class ScrollingActivity extends AppCompatActivity {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                try {
-                    saveFile();
-                    String imagePath = Environment.getExternalStorageDirectory() + File.separator + "Test.java";
-                    System.out.println("**********");
-                    runProcess("javac " + imagePath);
-                    System.out.println("**********");
-                    runProcess("java " + imagePath);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            public void onClick(final View view) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            String result = runProcess(codeCache);
+                            Snackbar.make(view, result, Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
                 if (codeCache.contains("main")) {
-                    Snackbar.make(view, "代码运行出错啦", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, "服务器宕机啦，暂时不能运行哈", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 } else {
                     Snackbar.make(view, "代码没有main()方法，不能运行哈", Snackbar.LENGTH_LONG)
@@ -131,48 +130,13 @@ public class ScrollingActivity extends AppCompatActivity {
         showCode(itemIndex);
     }
 
-    public void saveFile() {
-        String imagePath = Environment.getExternalStorageDirectory() + File.separator + "Test.java";
-        try (PrintWriter out = new PrintWriter(imagePath)) {
-            out.println("public class Tree<T> {\n" +
-                    "    private Node<T> root;\n" +
-                    "\n" +
-                    "    public Tree(T rootData) {\n" +
-                    "        root = new Node<T>();\n" +
-                    "        root.data = rootData;\n" +
-                    "        root.children = new ArrayList<Node<T>>();\n" +
-                    "    }\n" +
-                    "\n" +
-                    "    public static class Node<T> {\n" +
-                    "        private T data;\n" +
-                    "        private Node<T> parent;\n" +
-                    "        private List<Node<T>> children;\n" +
-                    "    }\n" +
-                    "\n" +
-                    "    public static void main(String[] args) {\n" +
-                    "        Log.e(\"Tag:\",\"coem in java...\");\n" +
-                    "    }\n" +
-                    "}");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    private static void printLines(String cmd, InputStream ins) throws Exception {
-        String line = null;
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(ins));
-        while ((line = in.readLine()) != null) {
-            System.out.println(cmd + " " + line);
-        }
-    }
-
-    private static void runProcess(String command) throws Exception {
-        Process pro = Runtime.getRuntime().exec(command);
-        printLines(command + " stdout:", pro.getInputStream());
-        printLines(command + " stderr:", pro.getErrorStream());
-        pro.waitFor();
-        System.out.println(command + " exitValue() " + pro.exitValue());
+    private static String runProcess(String source) throws Exception {
+        HackerEarthAPI apiHandle = new HackerEarthAPI("0c26a897f3f05d6aec84be4f20953de3c35db0f5");
+        RunOptions options = new RunOptions(source, SupportedLanguages.PYTHON);
+        RunResponse response = apiHandle.Run(options);
+        Gson gson = new Gson();
+        return response.getMessage();
     }
 
 

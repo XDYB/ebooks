@@ -22,7 +22,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import me.chunsheng.ebooks.R;
 
 import com.joanzapata.pdfview.PDFView;
 import com.joanzapata.pdfview.listener.OnPageChangeListener;
@@ -122,6 +121,14 @@ public class MainActivity extends AppCompatActivity
                 progressBar.setVisibility(View.GONE);
             }
         }, 1300);
+        checkVersion();
+    }
+
+    /**
+     * 检查版本更新
+     */
+    public void checkVersion() {
+        new UpdateTask(getApplicationContext(), true).update();
     }
 
     @Override

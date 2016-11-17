@@ -28,6 +28,6 @@ public class Tree<T> {
     }
 
     public static void main(String[] args) {
-        Log.e("Tag:","coem in java...");
+       System.out.print("Tag: coem in java...");
     }
 }

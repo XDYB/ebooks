@@ -24,13 +24,13 @@
 
 package me.chunsheng.ebooks.hackerearth.api.client;
 
-import com.hackerearth.heapi.sdk.options.CompileOptions;
-import com.hackerearth.heapi.sdk.options.RunOptions;
-import com.hackerearth.heapi.sdk.requests.CompileRequest;
-import com.hackerearth.heapi.sdk.requests.RunRequest;
-import com.hackerearth.heapi.sdk.responses.CompileResponse;
-import com.hackerearth.heapi.sdk.responses.RunResponse;
 
+import me.chunsheng.ebooks.hackerearth.api.options.CompileOptions;
+import me.chunsheng.ebooks.hackerearth.api.options.RunOptions;
+import me.chunsheng.ebooks.hackerearth.api.requests.CompileRequest;
+import me.chunsheng.ebooks.hackerearth.api.requests.RunRequest;
+import me.chunsheng.ebooks.hackerearth.api.responses.CompileResponse;
+import me.chunsheng.ebooks.hackerearth.api.responses.RunResponse;
 
 public class HackerEarthAPI {
 
