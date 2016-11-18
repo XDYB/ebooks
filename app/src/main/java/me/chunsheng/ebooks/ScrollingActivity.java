@@ -151,7 +151,7 @@ public class ScrollingActivity extends AppCompatActivity {
                 public void run() {
                     progressBar.setVisibility(View.GONE);
                 }
-            }, 1000);
+            }, 2000);
             Log.e("Click:", "item:" + item.text);
         }
     };

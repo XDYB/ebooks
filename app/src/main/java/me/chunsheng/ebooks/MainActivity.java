@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity
             public void run() {
                 progressBar.setVisibility(View.GONE);
             }
-        }, 1300);
+        }, 2500);
         checkVersion();
     }
 
@@ -371,8 +372,9 @@ public class MainActivity extends AppCompatActivity
      * 显示联系对话框，显示联系方式
      */
     public void showSendDialog() {
+        LayoutInflater inflater = getLayoutInflater();
         new AlertDialog.Builder(MainActivity.this)
-                .setView(R.layout.dialog_send_message)
+                .setView(inflater.inflate(R.layout.dialog_send_message, null))
                 .setPositiveButton(android.R.string.ok, null)
                 .show();
     }
